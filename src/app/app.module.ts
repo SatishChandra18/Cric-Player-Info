@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { SharedModule } from './shared/shared.module';
 
 
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    SharedModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
