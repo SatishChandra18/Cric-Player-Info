@@ -10,15 +10,101 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
   id: string;
-  role: string;
-  constructor(private router: Router, public authService: AuthService) { }
+  post: string;
+  constructor(private router: Router, public authService: AuthService) {}
+
+  name:string;
+  key: string = 'categories';
+  data: Array<Object> = [
+    {
+      name: "Country",
+      categories: [
+        {
+          name: "India",
+          categories: [
+              {
+                name: "Virat Kohli",
+                categories: [],
+                role: "Batsman"
+              },
+              {
+                name: "MS Dhoni",
+                categories: [],
+                role: "WicketKeeper"
+              },
+              {
+                name: "Ajinkya Rahane",
+                categories: [],
+                role: "Batsman"
+              },
+              {
+                name: "R. Ashwin",
+                categories: [],
+                role: "Bowler"
+              }
+            ]
+          },
+          {
+            name: "Australia",
+            categories: [
+                {
+                  name: "Steve Smith",
+                  categories: [],
+                  role: "Batsman"
+                },
+                {
+                  name: "David Warner",
+                  categories: [],
+                  role: "Batsman"
+                },
+                {
+                  name: "Mitchell Starc",
+                  categories: [],
+                  role: "Bowler"
+                },
+                {
+                  name: "Tim Paine",
+                  categories: [],
+                  role: "WicketKeeper"
+                }
+              ]
+          },
+          {
+            name: "South Africa",
+            categories: [
+                {
+                  name: "AB De Villears",
+                  categories: [],
+                  role: "WicketKeeper"
+                },
+                {
+                  name: "Hashim Amla",
+                  categories: [],
+                  role: "Batsman"
+                },
+                {
+                  name: "Philander phil",
+                  categories: [],
+                  role: "Bowler"
+                },
+                {
+                  name: "Kasigo Rabada",
+                  categories: [],
+                  role: "Bowler"
+                }
+              ]
+          }
+        ]
+    }
+  ];
+
 
   ngOnInit() {
     this.id = localStorage.getItem('token');
     if (localStorage.getItem('isUserAdmin') === 'true') {
-      this.role = 'Admin';
+      this.post = 'Admin';
     } else {
-      this.role = 'Commentator';
+      this.post = 'Commentator';
     }
   }
 
