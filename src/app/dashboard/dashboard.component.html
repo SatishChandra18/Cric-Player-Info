@@ -1,12 +1,16 @@
 <div class="container">
   <div class="loginBox" style="margin-top: -25px;">
-      Welcome,  {{id}} {post}
-      <a href="javascript:void(0);" (click)="logout()" style="float: right">Logout</a>
+    Welcome,  {{id}} - {{post}}
+    <a href="javascript:void(0);" (click)="logout()" style="float: right">Logout</a>
   </div>
   <Br>
   <div class="row">
     <div class="col-md-4">
-      <div>
+      <div *ngIf="data.length > 0;" class="search-results" infinite-scroll 
+        [infiniteScrollDistance]="2" [infiniteScrollUpDistance]="2" 
+        [infiniteScrollThrottle]="50" 
+        (scrolled)="onScrollDown()"
+         [scrollWindow]="false">
         <ui-tree [data]="data" [key]="key"></ui-tree>
       </div>
     </div>
