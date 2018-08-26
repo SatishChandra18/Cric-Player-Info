@@ -1,6 +1,6 @@
 <ul *ngIf="items.length">
-  <li *ngFor="let item of items">
-  {{item.name}}
-  <ui-tree *ngIf="item[key].length" [key]="key" [data]="item[key]"></ui-tree>
+  <li *ngFor="let item of items; let i = index" >
+     <div style="cursor:pointer" (click)="selectPlayer(item)">{{item.name}}</div>
+     <ui-tree *ngIf="item[key].length" [key]="key" [data]="item[key]" (selected)="onSelected($event)"></ui-tree>
   </li>
 </ul>

@@ -11,14 +11,23 @@
         [infiniteScrollThrottle]="50" 
         (scrolled)="onScrollDown()"
          [scrollWindow]="false">
-        <ui-tree [data]="data" [key]="key"></ui-tree>
+        <ui-tree [data]="data" [key]="key" (selected)="onSelected($event)"></ui-tree>
       </div>
     </div>
     <div class="col-md-4">
-      This is where player photo goes
+      <img *ngIf="playerImage" [src]="playerImage"/>
+      <div *ngIf="!playerImage" style="font-weight: bold">Please select a player to view his stats</div>
     </div>
-    <div class="col-md-4">
-      This is where player info goes
+    <div class="col-md-4" *ngIf="playerImage">
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" 
+                 id="playerName" required [(ngModel)]="playerName" name="playerName">
+        </div>
+        <button type="submit" class="btn btn-success" disabled>Edit</button>
+   
+      </form>
     </div>
   </div>
 </div>

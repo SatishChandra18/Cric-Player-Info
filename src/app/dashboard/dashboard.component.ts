@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -18,6 +19,8 @@ export class DashboardComponent implements OnInit {
   key: string = 'categories';
   response;
   data;
+  playerName: string;
+  playerImage;
   
   constructor(private router: Router, public authService: AuthService, private userService: UserService) {}
   ngOnInit() {
@@ -36,7 +39,15 @@ export class DashboardComponent implements OnInit {
     );
     
   }
-
+  onSelected(playerName: any) {
+    if(typeof playerName === 'object' && playerName.categories.length>0){
+      this.playerImage = null;
+    }else{
+      this.playerImage = playerName.imagePath;
+      this.playerName = playerName.name;
+    }
+      
+  }
   onScrollDown(){
     if(this.data.length < this.response[0].categories.length){  
       let len = this.data.length;

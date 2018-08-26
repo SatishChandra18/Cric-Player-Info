@@ -8,4 +8,12 @@ import { Component, OnChanges, Input, EventEmitter, Output } from '@angular/core
 export class StarComponent {
   @Input('data') items: Array<Object>;
   @Input('key') key: string;
+  @Output() selected = new EventEmitter<boolean>();
+  
+  onSelected(playerName: any) {
+    this.selected.emit(playerName); 
+  }  
+  selectPlayer(name: any) {
+    this.selected.emit(name);  
+  }
 }
