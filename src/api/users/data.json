@@ -1,0 +1,307 @@
+[
+    {
+      "name": "Country",
+      "categories": [
+        {
+          "name": "India",
+          "categories": [
+              {
+                "name": "Virat Kohli",
+                "categories": [],
+                "role": "Batsman"
+              },
+              {
+                "name": "MS Dhoni",
+                "categories": [],
+                "role": "WicketKeeper"
+              },
+              {
+                "name": "Ajinkya Rahane",
+                "categories": [],
+                "role": "Batsman"
+              },
+              {
+                "name": "R. Ashwin",
+                "categories": [],
+                "role": "Bowler"
+              }
+            ]
+          },
+          {
+            "name": "Australia",
+            "categories": [
+                {
+                    "name": "Steve Smith",
+                    "categories": [],
+                    "role": "Batsman"
+                },
+                {
+                    "name": "David Warner",
+                    "categories": [],
+                    "role": "Batsman"
+                },
+                {
+                    "name": "Mitchell Starc",
+                    "categories": [],
+                    "role": "Bowler"
+                },
+                {
+                    "name": "Tim Paine",
+                    "categories": [],
+                    "role": "WicketKeeper"
+                }
+              ]
+          },
+          {
+            "name": "South Africa",
+            "categories": [
+                {
+                    "name": "AB De Villears",
+                    "categories": [],
+                    "role": "WicketKeeper"
+                },
+                {
+                    "name": "Hashim Amla",
+                    "categories": [],
+                    "role": "Batsman"
+                },
+                {
+                    "name": "Philander phil",
+                    "categories": [],
+                    "role": "Bowler"
+                },
+                {
+                    "name": "Kasigo Rabada",
+                    "categories": [],
+                    "role": "Bowler"
+                }
+              ]
+          },
+          {
+            "name": "South Africa",
+            "categories": [
+                {
+                    "name": "AB De Villears",
+                    "categories": [],
+                    "role": "WicketKeeper"
+                },
+                {
+                    "name": "Hashim Amla",
+                    "categories": [],
+                    "role": "Batsman"
+                },
+                {
+                    "name": "Philander phil",
+                    "categories": [],
+                    "role": "Bowler"
+                },
+                {
+                    "name": "Kasigo Rabada",
+                    "categories": [],
+                    "role": "Bowler"
+                }
+              ]
+          },
+          {
+            "name": "South Africa",
+            "categories": [
+                {
+                    "name": "AB De Villears",
+                    "categories": [],
+                    "role": "WicketKeeper"
+                },
+                {
+                    "name": "Hashim Amla",
+                    "categories": [],
+                    "role": "Batsman"
+                },
+                {
+                    "name": "Philander phil",
+                    "categories": [],
+                    "role": "Bowler"
+                },
+                {
+                    "name": "Kasigo Rabada",
+                    "categories": [],
+                    "role": "Bowler"
+                }
+              ]
+          },
+          {
+            "name": "South Africa",
+            "categories": [
+                {
+                    "name": "AB De Villears",
+                    "categories": [],
+                    "role": "WicketKeeper"
+                },
+                {
+                    "name": "Hashim Amla",
+                    "categories": [],
+                    "role": "Batsman"
+                },
+                {
+                    "name": "Philander phil",
+                    "categories": [],
+                    "role": "Bowler"
+                },
+                {
+                    "name": "Kasigo Rabada",
+                    "categories": [],
+                    "role": "Bowler"
+                }
+              ]
+          },
+          {
+            "name": "South Africa",
+            "categories": [
+                {
+                    "name": "AB De Villears",
+                    "categories": [],
+                    "role": "WicketKeeper"
+                },
+                {
+                    "name": "Hashim Amla",
+                    "categories": [],
+                    "role": "Batsman"
+                },
+                {
+                    "name": "Philander phil",
+                    "categories": [],
+                    "role": "Bowler"
+                },
+                {
+                    "name": "Kasigo Rabada",
+                    "categories": [],
+                    "role": "Bowler"
+                }
+              ]
+          },
+          {
+            "name": "South Africa",
+            "categories": [
+                {
+                    "name": "AB De Villears",
+                    "categories": [],
+                    "role": "WicketKeeper"
+                },
+                {
+                    "name": "Hashim Amla",
+                    "categories": [],
+                    "role": "Batsman"
+                },
+                {
+                    "name": "Philander phil",
+                    "categories": [],
+                    "role": "Bowler"
+                },
+                {
+                    "name": "Kasigo Rabada",
+                    "categories": [],
+                    "role": "Bowler"
+                }
+              ]
+          },
+          {
+            "name": "South Africa",
+            "categories": [
+                {
+                    "name": "AB De Villears",
+                    "categories": [],
+                    "role": "WicketKeeper"
+                },
+                {
+                    "name": "Hashim Amla",
+                    "categories": [],
+                    "role": "Batsman"
+                },
+                {
+                    "name": "Philander phil",
+                    "categories": [],
+                    "role": "Bowler"
+                },
+                {
+                    "name": "Kasigo Rabada",
+                    "categories": [],
+                    "role": "Bowler"
+                }
+              ]
+          },
+          {
+            "name": "South Africa",
+            "categories": [
+                {
+                    "name": "AB De Villears",
+                    "categories": [],
+                    "role": "WicketKeeper"
+                },
+                {
+                    "name": "Hashim Amla",
+                    "categories": [],
+                    "role": "Batsman"
+                },
+                {
+                    "name": "Philander phil",
+                    "categories": [],
+                    "role": "Bowler"
+                },
+                {
+                    "name": "Kasigo Rabada",
+                    "categories": [],
+                    "role": "Bowler"
+                }
+              ]
+          },
+          {
+            "name": "South Africa",
+            "categories": [
+                {
+                    "name": "AB De Villears",
+                    "categories": [],
+                    "role": "WicketKeeper"
+                },
+                {
+                    "name": "Hashim Amla",
+                    "categories": [],
+                    "role": "Batsman"
+                },
+                {
+                    "name": "Philander phil",
+                    "categories": [],
+                    "role": "Bowler"
+                },
+                {
+                    "name": "Kasigo Rabada",
+                    "categories": [],
+                    "role": "Bowler"
+                }
+              ]
+          },
+          {
+            "name": "South Africa",
+            "categories": [
+                {
+                    "name": "AB De Villears",
+                    "categories": [],
+                    "role": "WicketKeeper"
+                },
+                {
+                    "name": "Hashim Amla",
+                    "categories": [],
+                    "role": "Batsman"
+                },
+                {
+                    "name": "Philander phil",
+                    "categories": [],
+                    "role": "Bowler"
+                },
+                {
+                    "name": "Kasigo Rabada",
+                    "categories": [],
+                    "role": "Bowler"
+                }
+              ]
+          }
+        ]
+    }
+  ]

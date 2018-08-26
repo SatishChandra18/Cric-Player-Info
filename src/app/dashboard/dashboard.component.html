@@ -6,7 +6,7 @@
   <Br>
   <div class="row">
     <div class="col-md-4">
-      <div *ngIf="data.length > 0;" class="search-results" infinite-scroll 
+      <div *ngIf="data && data.length > 0;" class="search-results" infinite-scroll 
         [infiniteScrollDistance]="2" [infiniteScrollUpDistance]="2" 
         [infiniteScrollThrottle]="50" 
         (scrolled)="onScrollDown()"

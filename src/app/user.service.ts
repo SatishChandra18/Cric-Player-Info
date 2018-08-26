@@ -10,11 +10,18 @@ import { ILogin } from './login';
 })
 export class UserService {
   private userUrl = 'api/users/users.json';
+  private dataUrl = 'api/users/data.json';
 
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<ILogin[]> {
     return this.http.get<ILogin[]>(this.userUrl).pipe(
+      tap(data => console.log('All: ' + JSON.stringify(data))),
+      catchError(this.handleError)
+    );
+  }
+  getData(): Observable<any> {
+    return this.http.get<any>(this.dataUrl).pipe(
       tap(data => console.log('All: ' + JSON.stringify(data))),
       catchError(this.handleError)
     );

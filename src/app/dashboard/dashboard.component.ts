@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import {Observable, BehaviorSubject} from 'rxjs';
-import { fromEvent } from 'rxjs';
-import { merge } from 'rxjs';
-import {distinct, filter, map, debounceTime, tap, flatMap} from 'rxjs/operators';
-import {HttpClient} from '@angular/common/http';
-import * as _ from 'lodash';
+import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -17,296 +13,13 @@ export class DashboardComponent implements OnInit {
 
   id: string;
   post: string;
- 
-
-  name:string;
+  name: string;
+  errorMessage: string;
   key: string = 'categories';
-  response = [
-    {
-      name: "Country",
-      categories: [
-        {
-          name: "India",
-          categories: [
-              {
-                name: "Virat Kohli",
-                categories: [],
-                role: "Batsman"
-              },
-              {
-                name: "MS Dhoni",
-                categories: [],
-                role: "WicketKeeper"
-              },
-              {
-                name: "Ajinkya Rahane",
-                categories: [],
-                role: "Batsman"
-              },
-              {
-                name: "R. Ashwin",
-                categories: [],
-                role: "Bowler"
-              }
-            ]
-          },
-          {
-            name: "Australia",
-            categories: [
-                {
-                  name: "Steve Smith",
-                  categories: [],
-                  role: "Batsman"
-                },
-                {
-                  name: "David Warner",
-                  categories: [],
-                  role: "Batsman"
-                },
-                {
-                  name: "Mitchell Starc",
-                  categories: [],
-                  role: "Bowler"
-                },
-                {
-                  name: "Tim Paine",
-                  categories: [],
-                  role: "WicketKeeper"
-                }
-              ]
-          },
-          {
-            name: "South Africa",
-            categories: [
-                {
-                  name: "AB De Villears",
-                  categories: [],
-                  role: "WicketKeeper"
-                },
-                {
-                  name: "Hashim Amla",
-                  categories: [],
-                  role: "Batsman"
-                },
-                {
-                  name: "Philander phil",
-                  categories: [],
-                  role: "Bowler"
-                },
-                {
-                  name: "Kasigo Rabada",
-                  categories: [],
-                  role: "Bowler"
-                }
-              ]
-          },
-          {
-            name: "South Africa",
-            categories: [
-                {
-                  name: "AB De Villears",
-                  categories: [],
-                  role: "WicketKeeper"
-                },
-                {
-                  name: "Hashim Amla",
-                  categories: [],
-                  role: "Batsman"
-                },
-                {
-                  name: "Philander phil",
-                  categories: [],
-                  role: "Bowler"
-                },
-                {
-                  name: "Kasigo Rabada",
-                  categories: [],
-                  role: "Bowler"
-                }
-              ]
-          },
-          {
-            name: "South Africa",
-            categories: [
-                {
-                  name: "AB De Villears",
-                  categories: [],
-                  role: "WicketKeeper"
-                },
-                {
-                  name: "Hashim Amla",
-                  categories: [],
-                  role: "Batsman"
-                },
-                {
-                  name: "Philander phil",
-                  categories: [],
-                  role: "Bowler"
-                },
-                {
-                  name: "Kasigo Rabada",
-                  categories: [],
-                  role: "Bowler"
-                }
-              ]
-          },
-          {
-            name: "South Africa",
-            categories: [
-                {
-                  name: "AB De Villears",
-                  categories: [],
-                  role: "WicketKeeper"
-                },
-                {
-                  name: "Hashim Amla",
-                  categories: [],
-                  role: "Batsman"
-                },
-                {
-                  name: "Philander phil",
-                  categories: [],
-                  role: "Bowler"
-                },
-                {
-                  name: "Kasigo Rabada",
-                  categories: [],
-                  role: "Bowler"
-                }
-              ]
-          },
-          {
-            name: "South Africa",
-            categories: [
-                {
-                  name: "AB De Villears",
-                  categories: [],
-                  role: "WicketKeeper"
-                },
-                {
-                  name: "Hashim Amla",
-                  categories: [],
-                  role: "Batsman"
-                },
-                {
-                  name: "Philander phil",
-                  categories: [],
-                  role: "Bowler"
-                },
-                {
-                  name: "Kasigo Rabada",
-                  categories: [],
-                  role: "Bowler"
-                }
-              ]
-          },
-          {
-            name: "South Africa",
-            categories: [
-                {
-                  name: "AB De Villears",
-                  categories: [],
-                  role: "WicketKeeper"
-                },
-                {
-                  name: "Hashim Amla",
-                  categories: [],
-                  role: "Batsman"
-                },
-                {
-                  name: "Philander phil",
-                  categories: [],
-                  role: "Bowler"
-                },
-                {
-                  name: "Kasigo Rabada",
-                  categories: [],
-                  role: "Bowler"
-                }
-              ]
-          },
-          {
-            name: "South Africa",
-            categories: [
-                {
-                  name: "AB De Villears",
-                  categories: [],
-                  role: "WicketKeeper"
-                },
-                {
-                  name: "Hashim Amla",
-                  categories: [],
-                  role: "Batsman"
-                },
-                {
-                  name: "Philander phil",
-                  categories: [],
-                  role: "Bowler"
-                },
-                {
-                  name: "Kasigo Rabada",
-                  categories: [],
-                  role: "Bowler"
-                }
-              ]
-          },
-          {
-            name: "South Africa",
-            categories: [
-                {
-                  name: "AB De Villears",
-                  categories: [],
-                  role: "WicketKeeper"
-                },
-                {
-                  name: "Hashim Amla",
-                  categories: [],
-                  role: "Batsman"
-                },
-                {
-                  name: "Philander phil",
-                  categories: [],
-                  role: "Bowler"
-                },
-                {
-                  name: "Kasigo Rabada",
-                  categories: [],
-                  role: "Bowler"
-                }
-              ]
-          },
-          {
-            name: "South Africa",
-            categories: [
-                {
-                  name: "AB De Villears",
-                  categories: [],
-                  role: "WicketKeeper"
-                },
-                {
-                  name: "Hashim Amla",
-                  categories: [],
-                  role: "Batsman"
-                },
-                {
-                  name: "Philander phil",
-                  categories: [],
-                  role: "Bowler"
-                },
-                {
-                  name: "Kasigo Rabada",
-                  categories: [],
-                  role: "Bowler"
-                }
-              ]
-          }
-        ]
-    }
-  ];
+  response;
   data;
   
-
-  constructor(private router: Router, public authService: AuthService) {}
+  constructor(private router: Router, public authService: AuthService, private userService: UserService) {}
   ngOnInit() {
     this.id = localStorage.getItem('token');
     if (localStorage.getItem('isUserAdmin') === 'true') {
@@ -314,7 +27,14 @@ export class DashboardComponent implements OnInit {
     } else {
       this.post = 'Commentator';
     }
-    this.data = this.response[0].categories.slice(0,5);
+    this.userService.getData().subscribe(
+      data => {
+        this.response = data;
+        this.data = this.response[0].categories.slice(0,5);
+      },
+      error => this.errorMessage = <any>error
+    );
+    
   }
 
   onScrollDown(){
